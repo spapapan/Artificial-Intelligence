@@ -55,11 +55,11 @@ public class Main extends JFrame{
 		this.remove(board);
 		board = new Board(difficulty,AIPlayer,saveDataSet,onoffsound);
 		setBar(this, board);
-        this.add(board);
-        board.revalidate();
-        board.repaint();
-        board.setFocusable(true);
-        board.requestFocus();
+                this.add(board);
+        	board.revalidate();
+        	board.repaint();
+        	board.setFocusable(true);
+        	board.requestFocus();
  
 	}
 	
@@ -69,7 +69,7 @@ public class Main extends JFrame{
 		Main fr = new Main(false, false);
 		board.SaveDataSet();
 		
-	    nnframe = new JFrame();
+	        nnframe = new JFrame();
 		nnframe.setPreferredSize(new Dimension(300,150));
 		nnframe.setLocation(500,200);
 		nnframe.setTitle("Train Neural Network");
@@ -178,138 +178,137 @@ public class Main extends JFrame{
 	private void setBar(JFrame frame, Board board){
 		
 		JMenuBar menuBar = new JMenuBar();
-        JMenu menu = new JMenu("Levels");
-        JMenu file = new JMenu("File");
-        JMenu settings = new JMenu("Settings");
+        	JMenu menu = new JMenu("Levels");
+        	JMenu file = new JMenu("File");
+        	JMenu settings = new JMenu("Settings");
 
-        JMenu ai = new JMenu("Neural Network");
-        ai.setMaximumSize(new Dimension(140,80));
-        JMenuItem pause = new JMenuItem("Pause");
-        pause.setMaximumSize(new Dimension(60,80));
+        	JMenu ai = new JMenu("Neural Network");
+        	ai.setMaximumSize(new Dimension(140,80));
+        	JMenuItem pause = new JMenuItem("Pause");
+        	pause.setMaximumSize(new Dimension(60,80));
 
 
  
         
-        menuBar.add(file);
-        menuBar.add(menu);
-        menuBar.add(ai);
-        menuBar.add(settings);
-        menuBar.add(pause);
+        	menuBar.add(file);
+        	menuBar.add(menu);
+        	menuBar.add(ai);
+        	menuBar.add(settings);
+        	menuBar.add(pause);
         
-        JMenuItem easy = new JMenuItem("Easy");
-        JMenuItem medium = new JMenuItem("Medium");
-        JMenuItem hard = new JMenuItem("Hard");
-        JMenuItem extreme = new JMenuItem("Extreme");
+        	JMenuItem easy = new JMenuItem("Easy");
+        	JMenuItem medium = new JMenuItem("Medium");
+        	JMenuItem hard = new JMenuItem("Hard");
+        	JMenuItem extreme = new JMenuItem("Extreme");
         
-        JMenuItem trainNN = new JMenuItem("Train Neural Network");
-        JMenuItem aiplayer = new JMenuItem("AI Player");
-        JMenuItem createSet = new JMenuItem("Create training set");
+        	JMenuItem trainNN = new JMenuItem("Train Neural Network");
+        	JMenuItem aiplayer = new JMenuItem("AI Player");
+        	JMenuItem createSet = new JMenuItem("Create training set");
         
-        JMenuItem start = new JMenuItem("New");
-        JMenuItem about = new JMenuItem("About");
-        JMenuItem exit = new JMenuItem("Exit");
+        	JMenuItem start = new JMenuItem("New");
+        	JMenuItem about = new JMenuItem("About");
+        	JMenuItem exit = new JMenuItem("Exit");
         
-        JMenuItem sound = new JMenuItem("Sound On/Off");
-        JMenuItem grid = new JMenuItem("Show/Hide grid");
+        	JMenuItem sound = new JMenuItem("Sound On/Off");
+        	JMenuItem grid = new JMenuItem("Show/Hide grid");
         
-        start.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	StartGame(false,false);
-            }
-        });
+        	start.addActionListener(new ActionListener(){
+           	 @Override
+           	 public void actionPerformed(ActionEvent e) {
+            		StartGame(false,false);
+          	  }
+        	});
         
-        sound.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	board.OnOffSound();
-            	if (onoffsound){
-            		onoffsound = false;
-            	} else{
+        	sound.addActionListener(new ActionListener(){
+           	 @Override
+           	 public void actionPerformed(ActionEvent e) {
+            		board.OnOffSound();
+            		if (onoffsound){
+            			onoffsound = false;
+            		} else{
             		onoffsound = true;
+            		}
+           	 }
+       		 });
+        
+        	grid.addActionListener(new ActionListener(){
+           	 @Override
+           	 public void actionPerformed(ActionEvent e) {
+            		board.PaintGrid();
             	}
-            }
-        });
+        	});
         
-        grid.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	board.PaintGrid();
-            }
-        });
+        	createSet.addActionListener(new ActionListener(){
+            	@Override
+            	public void actionPerformed(ActionEvent e) {
+            		board.createDataSet();
+            	}
+        	});
         
-        createSet.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	board.createDataSet();
-            }
-        });
+        	trainNN.addActionListener(new ActionListener(){
+            	@Override
+           	 public void actionPerformed(ActionEvent e) {
+            		board.SaveDataSet();
+            		LoadTrainPanel();
+            	}
+        	});
         
-        trainNN.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	board.SaveDataSet();
-            	LoadTrainPanel();
-            }
-        });
-        
-        aiplayer.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	StartGame(true,false);
-            }
-        });
+        	aiplayer.addActionListener(new ActionListener(){
+           	 @Override
+            	public void actionPerformed(ActionEvent e) {
+            		StartGame(true,false);
+           	 }
+        	});
         
 
-        easy.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	difficulty = 100;
-            	StartGame(false,false);
-            }
-        });
+       	 	easy.addActionListener(new ActionListener(){
+            	@Override
+            	public void actionPerformed(ActionEvent e) {
+            		difficulty = 100;
+            		StartGame(false,false);
+            	}
+        	});
         
-        medium.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	difficulty = 60;
-            	StartGame(false,false);
-            }
-        });
+        	medium.addActionListener(new ActionListener(){
+            	@Override
+           	public void actionPerformed(ActionEvent e) {
+            		difficulty = 60;
+            		StartGame(false,false);
+            	}
+        	});
         
-        hard.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	difficulty = 30;
-            	StartGame(false,false);
-            }
-        });
+        	hard.addActionListener(new ActionListener(){
+           	 @Override
+            	public void actionPerformed(ActionEvent e) {
+            		difficulty = 30;
+            		StartGame(false,false);
+            	}
+        	});
         
-        extreme.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	difficulty = 20;
-            	StartGame(false,false);
-            }
-        });
+        	extreme.addActionListener(new ActionListener(){
+            	@Override
+            	public void actionPerformed(ActionEvent e) {
+            		difficulty = 20;
+            		StartGame(false,false);
+           	}
+        	});
         
         
-        pause.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            	board.pauseGame();
-            }
-        });
+        	pause.addActionListener(new ActionListener(){
+            	@Override
+            	public void actionPerformed(ActionEvent e) {
+            		board.pauseGame();
+            	}
+        	});
         
-        about.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        	about.addActionListener(new ActionListener(){
+            	@Override
+            	public void actionPerformed(ActionEvent e) {
             	try {
-					About();
-				} catch (URISyntaxException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
+		    About();
+		} catch (URISyntaxException e1) {
+		 e1.printStackTrace();
+         	}
             }
         });
         
@@ -377,12 +376,12 @@ public class Main extends JFrame{
 	 
 		JLabel lb1 = new JLabel("AI Snake 1.0");
 		lb1.setFont(new Font ("Calibri", Font.BOLD , 17));
-        lb1.setBounds(140,10, 300,40);
+        	lb1.setBounds(140,10, 300,40);
 
         
 		JLabel lb2 = new JLabel("<html>To train the snake you must first create a new<br>dataset from Neural Network/Create training set.<br> That will record your movements while you play</html>", SwingConstants.CENTER);
 		lb2.setFont(new Font ("Calibri", 0 , 14));
-        lb2.setBounds(2,2, 400,200);
+        	lb2.setBounds(2,2, 400,200);
         
 		JLabel lb3 = new JLabel("<html>Teach the snake how to play by playing the game.</html>", SwingConstants.CENTER);
 		lb3.setFont(new Font ("Calibri", 0 , 14));
@@ -441,18 +440,13 @@ public class Main extends JFrame{
 		createNN(30,50); // Create empty neural network if there is none  
 		                 // with 30*30 inputs, 50 hidden neurons and 4 outputs
 		
-        try {
-            UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
-        }
-        catch (Exception ex) {
-            ex.printStackTrace();
-        }
-		 
+        	try {
+            	UIManager.setLookAndFeel("com.jtattoo.plaf.smart.SmartLookAndFeel");
+        	}
+        	catch (Exception ex) {
+            	ex.printStackTrace();
+        	}
 		new Main(false,false);
-
-		
-		
-	   
 	}
  
 
