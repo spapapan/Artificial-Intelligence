@@ -1,3 +1,5 @@
+package snake;
+
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
