@@ -169,7 +169,7 @@ public class Main extends JFrame{
         JMenuItem extreme = new JMenuItem("Extreme");
         
         JMenuItem trainNN = new JMenuItem("Train Neural Network");
-        JMenuItem aiplayer = new JMenuItem("AI Player");
+        JMenuItem aiplayer = new JMenuItem("AI Snake");
         JMenuItem saveSet = new JMenuItem("Save Training Set");
         
         JMenuItem start = new JMenuItem("New");
