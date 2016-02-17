@@ -12,7 +12,7 @@ The ANN has 900 inputs that indicates the location of the snake and the target, 
 To train the ANN I used the backpropagation algorithm with the <a href="http://www.heatonresearch.com/encog/">Neural Network Framework Encog</a>.
 
 To train the ANN go to Neural Network/Train Neural Network. The training process is time consuming and depends 
-on the amount of the training sets. To test the ANN go to Neural Network/AI Player. If you want to create a dataset
+on the amount of the training sets. To test the ANN go to Neural Network/AI Snake. If you want to create a dataset
 and train the network another time, don't forget to save the dataset by pressing S or from Neural Network/Save Training Set before you exit.
 
 If you want to run the java programm in your IDE, you will need to import <a href="encog-core-3.3.0-release.zip">encog-core-3.3.0.jar</a>,
