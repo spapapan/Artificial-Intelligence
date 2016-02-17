@@ -20,7 +20,7 @@ If you want to run the java programm in your IDE, you will need to import <a hre
 <br></br>
 <br></br>
 
-You can download the runnable jar file along with the sound files <a href="https://drive.google.com/file/d/0B46-skjIP2h-VVplMV94QUJLanM/view?usp=sharing">from here</a>. To run the program extract the zip file, open your terminal/cmd and type:
+You can download the runnable jar file along with the sound files <a href="https://drive.google.com/file/d/0B46-skjIP2h-cDItSC1kWDdTaDQ/view?usp=sharing">from here</a>. To run the program extract the zip file, open your terminal/cmd and type:
 
     cd "the location of the folder you extracted"
     java -Xss2m -jar AISnake.jar
