@@ -26,6 +26,6 @@ You can download the runnable jar file along with the sound files <a href="https
     java -Xss2m -jar AISnake.jar
     
 
-*To pause the game press space bar.
+To pause the game press space bar.
 
 Have fun !
