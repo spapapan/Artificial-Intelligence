@@ -36,12 +36,13 @@ public class Encog {
 		double out[] = output.getData();
 		int index=0;
 		double max = out[0];
-        for (int i=0; i< 3; i++){
-        	if (max < out[i+1]){
-        		max = out[i+1];
-        		index = i+1;
-        	} 
-        }
+		
+        	for (int i=0; i< 3; i++){
+        		if (max < out[i+1]){
+        			max = out[i+1];
+        			index = i+1;
+        		} 
+        	}
         return index;
 		
 	}
@@ -74,7 +75,7 @@ public class Encog {
 		
 		EncogDirectoryPersistence.saveObject(new File("NeuralNetwork"), network);
 		timeStamp = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
-        System.out.println(timeStamp + " : Neural Network trained!");
+        	System.out.println(timeStamp + " : Neural Network trained!");
         
 		
 	}
@@ -83,7 +84,7 @@ public class Encog {
 	// -------------- Create Empty Neural Network ------------------
 	public void CreateNeuralNetwork(int inputs, int hidden, int outputs){
 
-	    BasicNetwork network = new BasicNetwork();
+	        BasicNetwork network = new BasicNetwork();
 		network.addLayer(new BasicLayer(new ActivationSigmoid(), true,inputs));
 		network.addLayer(new BasicLayer(new ActivationSigmoid(), true,hidden));
 		network.addLayer(new BasicLayer(new ActivationSigmoid(), true,outputs));
@@ -100,7 +101,7 @@ public class Encog {
 	// ------------- Get Data Set from File ---------------------------
 	private MLDataSet getDataSet(){
 		
-		MLDataSet trainingSet = null;
+	    MLDataSet trainingSet = null;
 		
 	    int totallines=0;
 	    try (BufferedReader br1 = new BufferedReader(new FileReader("dataset.txt"))) {
@@ -110,10 +111,10 @@ public class Encog {
 	    		    totallines++;
  
 	    	    }
-	    }
+	        }
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+	        }
 		
 		try (BufferedReader br = new BufferedReader(new FileReader("dataset.txt"))) {
  
