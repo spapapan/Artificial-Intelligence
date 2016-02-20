@@ -15,7 +15,7 @@ To train the ANN go to Neural Network/Train Neural Network. The training process
 on the amount of the training sets. To test the ANN go to Neural Network/AI Snake. If you want to create a dataset
 and train the network another time, don't forget to save the dataset by pressing S or from Neural Network/Save Training Set before you exit.
 
-If you want to run the java programm in your IDE, you need to import <a href="encog-core-3.3.0-release.zip">encog-core-3.3.0.jar</a>,
+If you want to run the java programm in your IDE, you need to import <a href="encog-core-3.3.0-release.zip">encog-core-3.3.0.jar</a>
 , <a href="http://www.jtattoo.net/downloads/JTattoo-1.6.11.jar">JTattoo-1.6.11.jar</a>
 <br></br>
 <br></br>
